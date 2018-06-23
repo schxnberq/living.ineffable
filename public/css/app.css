@@ -1,0 +1,1467 @@
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:200,300,400,400i,600,700,800);@import url(https://fonts.googleapis.com/css?family=Poppins:200,200i,300,300i,400,400i,600,700,800);@import url(https://use.fontawesome.com/releases/v5.0.10/css/all.css);html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins';
+  color: #222222;
+}
+
+body {
+  background-image: url("/imgs/SVG/LINESROOM2x.svg");
+  background-size: 100%;
+  background-repeat: repeat;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.btn {
+  margin-top: 25px;
+  width: 100px;
+  background-color: rgba(119, 136, 153, 0.15);
+  padding: 3.5px 15px;
+  font-size: 1em;
+  font-family: 'Poppins';
+  cursor: pointer;
+  display: inline-block;
+  -webkit-transition: border .3s ease;
+  transition: border .3s ease;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 2px solid rgba(119, 136, 153, 0.15);
+  position: relative;
+  min-height: 35px;
+}
+
+.btn:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #00ddd3;
+  -webkit-transition: -webkit-transform .25s ease-in;
+  transition: -webkit-transform .25s ease-in;
+  transition: transform .25s ease-in;
+  transition: transform .25s ease-in, -webkit-transform .25s ease-in;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+  z-index: -1;
+  opacity: .33;
+}
+
+.btn:hover {
+  border: 2px solid #00ddd3;
+}
+
+.btn:hover:before {
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.btn.feedback:hover {
+  border: 2px solid #00ddd3;
+}
+
+.btn.feedback:hover:before {
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+
+.btn.feedback.isClicked {
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.alert {
+  margin: 0 auto;
+  text-align: center;
+  padding: 0;
+  width: 100%;
+  min-width: 350px;
+  border: 2px solid rgba(250, 128, 114, 0.66);
+  font-family: 'Poppins';
+  position: fixed;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: rgba(211, 211, 211, 0.96);
+  min-height: 75px;
+  z-index: 99;
+  line-height: 75px;
+  -webkit-transition: opacity .2s ease, top .3s ease-out;
+  transition: opacity .2s ease, top .3s ease-out;
+}
+
+.alert.alert-success,
+.alert.alert-check {
+  border: none;
+  border-bottom: 2px solid #22B0D2;
+}
+
+.alert.alert-success i,
+.alert.alert-check i {
+  font-size: 2rem;
+  position: absolute;
+  left: 50%;
+  bottom: 0%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: .33;
+}
+
+.alert.alert-success:before,
+.alert.alert-check:before {
+  content: "";
+}
+
+.alert ul {
+  padding: 10px;
+  width: 66%;
+  min-width: 300px;
+  margin: 0 auto;
+  list-style-type: none;
+  position: relative;
+}
+
+.alert ul li {
+  opacity: .88;
+  position: relative;
+  line-height: 1.6;
+}
+
+.alert ul li:not(:first-child) {
+  margin-top: 5px;
+}
+
+.alert:before {
+  content: "!";
+  display: block;
+  position: absolute;
+  left: 25px;
+  font-size: 3.3rem;
+  opacity: .66;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-family: 'Poppins';
+  color: salmon;
+}
+
+#app header {
+  grid-area: header;
+  width: 100%;
+}
+
+#app header .nav {
+  width: 100%;
+  grid-template-columns: repeat(6, 16.666%);
+  display: grid;
+  padding-top: 16px;
+}
+
+#app header .nav__logo {
+  grid-column: 1 / 3;
+  padding-left: 12%;
+}
+
+#app header .nav__logo h2 {
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+#app header .nav__logo h2 a {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  line-height: 52px;
+}
+
+#app header .nav__logo h2 a img {
+  display: inline-block;
+  width: 38px;
+}
+
+#app header .nav__user {
+  grid-column: 3 / 5;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#app header .nav__user__item {
+  margin: 0 6px;
+  text-transform: lowercase;
+  font-weight: 500;
+  font-size: 1.1em;
+  font-family: 'Poppins';
+  text-align: center;
+}
+
+#app header .nav__user__item a {
+  padding: 10px;
+  color: inherit;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+}
+
+#app header .nav__user__item a span {
+  position: relative;
+}
+
+#app header .nav__user__item a span:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #00ddd3;
+  opacity: .66;
+  bottom: 0px;
+  left: 0;
+  z-index: -1;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.35s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: -webkit-transform 0.35s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: transform 0.35s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: transform 0.35s cubic-bezier(0.86, 0, 0.07, 1), -webkit-transform 0.35s cubic-bezier(0.86, 0, 0.07, 1);
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+}
+
+#app header .nav__user__item a:hover span:before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+}
+
+#app header .nav__user__item a.is-active {
+  border: 1px solid lightslategray;
+}
+
+#app header .nav__user__item a.is-active span:before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+#app header .nav__menu {
+  grid-column: 5 / 7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  padding-right: 12%;
+}
+
+#app header .nav__menu__item {
+  margin: 0 6px;
+  text-transform: lowercase;
+  font-weight: 500;
+  font-size: 1.1em;
+  font-family: 'Poppins';
+}
+
+#app header .nav__menu__item a {
+  padding: 10px;
+  color: inherit;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+}
+
+#app header .nav__menu__item a span {
+  position: relative;
+}
+
+#app header .nav__menu__item a span:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #00ddd3;
+  opacity: .66;
+  bottom: 0px;
+  left: 0;
+  z-index: -1;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.35s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: -webkit-transform 0.35s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: transform 0.35s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: transform 0.35s cubic-bezier(0.86, 0, 0.07, 1), -webkit-transform 0.35s cubic-bezier(0.86, 0, 0.07, 1);
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+}
+
+#app header .nav__menu__item a:hover span:before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+}
+
+#app header .nav__menu__item a.is-active {
+  border: 1px solid lightslategray;
+}
+
+#app header .nav__menu__item a.is-active span:before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+#app main {
+  grid-area: main;
+  min-height: 85vh;
+}
+
+#app main .site {
+  grid-column: 1 / 7;
+  display: grid;
+  grid-template-columns: repeat(6, 16.66%);
+  padding-top: 40px;
+}
+
+#app main .site.home {
+  padding-top: 0;
+}
+
+#app main .site__title {
+  font-size: 3.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+}
+
+#app main .site__title span {
+  position: relative;
+}
+
+#app main .site__title span:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: calc(100% + 26px);
+  left: -13px;
+  bottom: 7px;
+  height: 20px;
+  z-index: -1;
+  opacity: .33;
+  background: lightslategray;
+}
+
+#app main .site__title em {
+  font-size: 6.6rem;
+  font-family: 'Zefani Stencil';
+  opacity: .1;
+  letter-spacing: 32px;
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-style: normal;
+  font-weight: 300;
+  z-index: -2;
+}
+
+#app main .site__home {
+  width: 100%;
+  grid-column: 1 / 7;
+  height: 100vh;
+  z-index: -2;
+  position: relative;
+}
+
+#app main .site__home .headline {
+  width: 66vw;
+  height: 66vh;
+  position: relative;
+  left: 4%;
+  border: 1px solid lightslategray;
+}
+
+#app main .site__home .headline h1 {
+  font-family: 'Playfair Display';
+  font-size: 3.6rem;
+  position: absolute;
+  left: 6%;
+  top: 3%;
+  z-index: 3;
+}
+
+#app main .site__home .headline h1 span {
+  display: block;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.6rem;
+}
+
+#app main .site__home:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 66%;
+  height: 66%;
+  bottom: 133px;
+  right: 35px;
+  border: 2px solid lightslategray;
+  z-index: -1;
+}
+
+#app main .site__home img {
+  width: 66%;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  top: calc(50% - 72px);
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+#app main .site__login {
+  grid-column: 2 / 6;
+}
+
+#app main .site__login .form {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 45px;
+}
+
+#app main .site__login .form .field {
+  margin: 0 auto;
+  margin-bottom: 25px;
+  max-width: 500px;
+}
+
+#app main .site__login .form .field .label {
+  font-family: 'Poppins';
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+#app main .site__login .form .field .control .input {
+  margin-top: 10px;
+  width: 100%;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  border-bottom: 2px solid lightslategray;
+  padding: 8px 18px;
+  -webkit-transition: border .3s ease;
+  transition: border .3s ease;
+  font-size: .9rem;
+  font-family: 'Poppins';
+  background-color: transparent;
+  position: relative;
+}
+
+#app main .site__login .form .field .control .input:focus {
+  border-color: #00ddd3;
+  outline: none;
+}
+
+#app main .site__login .form .field .control .input::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+#app main .site__login .form .field .control .input:-ms-input-placeholder {
+  opacity: 0;
+}
+
+#app main .site__login .form .field .control .input::-ms-input-placeholder {
+  opacity: 0;
+}
+
+#app main .site__login .form .field .control .input::placeholder {
+  opacity: 0;
+}
+
+#app main .site__login .form .field .control .input:not(:placeholder-shown) {
+  border-color: #00ddd3;
+}
+
+#app main .site__login .form .field .control .input ~ span.errormsg {
+  color: #f96a59;
+  font-size: .75rem;
+  font-family: 'Poppins';
+  font-weight: 300;
+}
+
+#app main .site__login .form .field .control.fancy-input {
+  position: relative;
+}
+
+#app main .site__login .form .field .control.fancy-input:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  left: 10px;
+  bottom: -12px;
+  background-color: rgba(119, 136, 153, 0.66);
+}
+
+#app main .site__login .form .field.submit {
+  text-align: center;
+}
+
+#app main.user-content {
+  grid-template-columns: repeat(6, 16.666%);
+  display: grid;
+}
+
+#app main.user-content .site__title {
+  text-align: left;
+  grid-column: 1 / 3;
+  font-size: 2.6rem;
+  font-family: "Poppins";
+  opacity: .66;
+  margin-bottom: 10px;
+}
+
+#app main.user-content .site__title span:before {
+  opacity: .66;
+  left: 0;
+  height: 3px;
+  bottom: -1px;
+  width: 100%;
+}
+
+#app main.user-content .site__dash {
+  grid-column: 1 / 7;
+  grid-template-columns: repeat(6, 16.666%);
+  display: grid;
+  margin-bottom: 8em;
+  grid-template-rows: auto 1fr;
+}
+
+#app main.user-content .site__dash__menu {
+  padding: 0;
+  margin: 0;
+  padding-left: 12%;
+  grid-column: 1 / 2;
+  list-style-type: none;
+}
+
+#app main.user-content .site__dash__menu__item {
+  font-size: 1.1em;
+  font-family: 'Poppins';
+  border-bottom: 1px solid lightslategray;
+  -webkit-transition: background .3s ease;
+  transition: background .3s ease;
+}
+
+#app main.user-content .site__dash__menu__item a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+#app main.user-content .site__dash__menu__item:hover {
+  background-color: rgba(119, 136, 153, 0.33);
+}
+
+#app main.user-content .site__dash .lists {
+  grid-column: 1 / 7;
+  display: inline-grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: auto auto 1fr;
+  padding: 0 4%;
+}
+
+#app main.user-content .site__dash .lists .alert {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: rgba(211, 211, 211, 0.96);
+  margin-top: 0;
+  min-height: 75px;
+  z-index: 99;
+  line-height: 75px;
+}
+
+#app main.user-content .site__dash .lists .alert.success {
+  border: 2px solid green;
+}
+
+#app main.user-content .site__dash .lists .alert.success:before {
+  content: "";
+}
+
+#app main.user-content .site__dash .lists__title {
+  text-transform: uppercase;
+  font-family: 'Poppins';
+  font-size: 3.6rem;
+  margin-bottom: 1em;
+  grid-column: 1/ 6;
+}
+
+#app main.user-content .site__dash .lists__item {
+  grid-column: 2 / 6;
+  padding: 20px;
+  border-bottom: 2px solid lightslategray;
+  border-top: 2px solid lightslategray;
+  margin-right: 16px;
+  margin-top: 10px;
+  margin-bottom: 96px;
+  position: relative;
+  -webkit-transition: opacity .3s ease, -webkit-transform .88s ease-in;
+  transition: opacity .3s ease, -webkit-transform .88s ease-in;
+  transition: opacity .3s ease, transform .88s ease-in;
+  transition: opacity .3s ease, transform .88s ease-in, -webkit-transform .88s ease-in;
+}
+
+#app main.user-content .site__dash .lists__item.remove-item {
+  opacity: 0;
+  -webkit-transform: translateY(-66px);
+          transform: translateY(-66px);
+}
+
+#app main.user-content .site__dash .lists__item .list_item_id {
+  display: none;
+}
+
+#app main.user-content .site__dash .lists__item:before,
+#app main.user-content .site__dash .lists__item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2px;
+  height: calc(100% + 44px);
+  left: 20px;
+  bottom: -22px;
+  background-color: lightslategray;
+}
+
+#app main.user-content .site__dash .lists__item:after {
+  left: unset;
+  right: 20px;
+}
+
+#app main.user-content .site__dash .lists__item:nth-of-type(even) {
+  grid-column: 6 / 10;
+  margin-left: 16px;
+  margin-right: 0;
+}
+
+#app main.user-content .site__dash .lists__item__title {
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  line-height: 1.2;
+}
+
+#app main.user-content .site__dash .lists__item__title .created_by {
+  font-size: 1rem;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+#app main.user-content .site__dash .lists__item .info {
+  width: 100%;
+  display: inline-block;
+  padding-left: 6px;
+}
+
+#app main.user-content .site__dash .lists__item .info .created_at {
+  font-size: .9rem;
+  font-style: italic;
+  font-weight: 200;
+}
+
+#app main.user-content .site__dash .lists__item .img {
+  height: 266px;
+  display: block;
+  padding-bottom: 20px;
+}
+
+#app main.user-content .site__dash .lists__item .img a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#app main.user-content .site__dash .lists__item .img .placeholder {
+  border: 1px solid lightslategray;
+  height: 246px;
+  width: 300px;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 20px;
+  text-align: center;
+  opacity: .33;
+}
+
+#app main.user-content .site__dash .lists__item .img .placeholder span {
+  display: block;
+  font-size: .8rem;
+}
+
+#app main.user-content .site__dash .lists__item .img .placeholder:before,
+#app main.user-content .site__dash .lists__item .img .placeholder:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 380px;
+  height: 1px;
+  background-color: lightslategray;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(40deg);
+          transform: translate(-50%, -50%) rotate(40deg);
+}
+
+#app main.user-content .site__dash .lists__item .img .placeholder:after {
+  -webkit-transform: translate(-50%, -50%) rotate(-40deg);
+          transform: translate(-50%, -50%) rotate(-40deg);
+}
+
+#app main.user-content .site__dash .lists__item .img img {
+  margin: 0 auto;
+  height: 100%;
+  display: block;
+}
+
+#app main.user-content .site__dash .lists__item .actions {
+  position: absolute;
+  left: 20px;
+  bottom: -35px;
+  height: 35px;
+}
+
+#app main.user-content .site__dash .lists__item .actions a,
+#app main.user-content .site__dash .lists__item .actions button {
+  text-transform: uppercase;
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 0;
+}
+
+#app main.user-content .site__dash .lists__item .actions button.delete-btn {
+  width: 133px;
+}
+
+#app main.user-content .site__dash .lists__item .actions button.delete-btn span {
+  pointer-events: none;
+}
+
+#app main.user-content .site__dash .lists__item .actions .delete {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#app main.user-content .site__dash .lists__item .actions .delete.do-delete {
+  opacity: 1;
+  visibility: visible;
+  position: absolute;
+  top: -200px;
+  padding: 30px 20px;
+  width: calc(100% + 10vw);
+  background-color: whitesmoke;
+  -webkit-box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  visibility: visible;
+}
+
+#app main.user-content .site__dash .lists__item .actions .delete.do-delete .head {
+  margin-bottom: 12px;
+  display: block;
+}
+
+#app main.user-content .site__dash .lists__item .actions .delete.do-delete form,
+#app main.user-content .site__dash .lists__item .actions .delete.do-delete button {
+  display: inline-block;
+  width: 49%;
+}
+
+#app main.user-content .site__dash .lists__item .actions .delete.do-delete form button {
+  width: 100%;
+}
+
+#app main.user-content .site__dash .lists__item .actions .delete.do-delete .yes {
+  background-color: rgba(250, 128, 114, 0.33);
+}
+
+#app main.user-content .site__dash .lists__item .actions .delete.do-delete .yes span {
+  pointer-events: none;
+}
+
+#app main.user-content .site__dash .lists__item .actions .delete.do-delete .no {
+  background-color: rgba(144, 238, 144, 0.33);
+}
+
+#app main.user-content .site__dash .lists__item .actions .delete.do-delete .no span {
+  pointer-events: none;
+}
+
+#app main.user-content .site__dash .lists__item .actions .shared_btn {
+  width: 166px;
+}
+
+#app main.user-content .site__dash .lists__item .actions .shared_btn .plus {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+#app main.user-content .site__dash .lists__item .actions .shared_btn .plus:before,
+#app main.user-content .site__dash .lists__item .actions .shared_btn .plus:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2px;
+  height: 75%;
+  background-color: black;
+  top: 30%;
+  left: 10px;
+}
+
+#app main.user-content .site__dash .lists__item .actions .shared_btn .plus:after {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+#app main.user-content .site__dash .lists .addlist {
+  padding-top: 15px;
+  text-align: center;
+  grid-column: 1 / 6;
+}
+
+#app main.user-content .site__dash .lists .addlist button {
+  position: relative;
+  width: 266px;
+  border: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-bottom: 2px solid lightslategray;
+  padding: 10px 15px;
+  font-size: .8rem;
+}
+
+#app main.user-content .site__dash .lists .addlist button:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(119, 136, 153, 0.2);
+  left: 0;
+  top: 0;
+  -webkit-transition: -webkit-transform .3s ease-in;
+  transition: -webkit-transform .3s ease-in;
+  transition: transform .3s ease-in;
+  transition: transform .3s ease-in, -webkit-transform .3s ease-in;
+  z-index: -1;
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+
+#app main.user-content .site__dash .lists .addlist button:hover:before {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+}
+
+#app main.user-content .site__dash .lists .addlist button.active {
+  background-color: rgba(0, 221, 211, 0.33);
+}
+
+#app main.user-content .site__dash .lists .addlist button.active i.fa-minus-square {
+  display: inline-block;
+}
+
+#app main.user-content .site__dash .lists .addlist button.active i.fa-plus-square {
+  display: none;
+}
+
+#app main.user-content .site__dash .lists .addlist button:focus {
+  outline: none;
+}
+
+#app main.user-content .site__dash .lists .addlist button i {
+  opacity: .66;
+  margin-top: 2px;
+  font-size: .96rem;
+  z-index: -1;
+  pointer-events: none;
+}
+
+#app main.user-content .site__dash .lists .addlist button i.fa-minus-square {
+  display: none;
+}
+
+#app main.user-content .site__dash .lists .addlist form {
+  height: 166px;
+  display: block;
+  -webkit-transition: max-height .3s ease, opacity .3s ease;
+  transition: max-height .3s ease, opacity .3s ease;
+}
+
+#app main.user-content .site__dash .lists .addlist form .exit {
+  width: 66px;
+  height: 25px;
+  position: relative;
+  cursor: pointer;
+  text-align: left;
+  display: inline-block;
+  position: absolute;
+  display: none;
+  right: 0;
+}
+
+#app main.user-content .site__dash .lists .addlist form .exit i {
+  font-style: normal;
+  font-size: 1em;
+}
+
+#app main.user-content .site__dash .lists .addlist form .exit:before,
+#app main.user-content .site__dash .lists .addlist form .exit:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: black;
+  right: 0;
+  top: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  right: 20px;
+}
+
+#app main.user-content .site__dash .lists .addlist form .exit:after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#app main.user-content .site__dash .lists .addlist form.inactive {
+  display: none;
+}
+
+#app main.user-content .site__dash .lists .addlist form .field {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 35px;
+}
+
+#app main.user-content .site__dash .lists .addlist form .field.submit {
+  margin-top: 0;
+}
+
+#app main.user-content .site__dash .lists .addlist form .field button.create {
+  width: 100%;
+  background-color: rgba(119, 136, 153, 0.22);
+  border: none;
+  font-weight: 600;
+}
+
+#app main.user-content .site__dash .lists .addlist form .field button.create:before {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  opacity: 0;
+}
+
+#app main.user-content .site__dash .lists .addlist form .field .label {
+  font-family: 'Poppins';
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+}
+
+#app main.user-content .site__dash .lists .addlist form .field .control .input {
+  width: 100%;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  border: 2px solid lightslategray;
+  padding: 8px 18px;
+  -webkit-transition: border .3s ease;
+  transition: border .3s ease;
+  font-size: .9rem;
+  font-family: 'Poppins';
+  background-color: transparent;
+  position: relative;
+}
+
+#app main.user-content .site__dash .lists .addlist form .field .control .input ~ span.errormsg {
+  color: #f96a59;
+  font-size: .75rem;
+  font-family: 'Poppins';
+  font-weight: 300;
+}
+
+#app main.user-content .site__dash .lists__grid {
+  grid-column: 1 / 6;
+  display: inline-grid;
+  grid-template-columns: repeat(10, 10%);
+}
+
+#app main.user-content .site__dash .lists__grid:not(:first-child) {
+  margin-top: 66px;
+}
+
+#app main.user-content .site__dash .lists__grid hr {
+  grid-column: 1 / 7;
+}
+
+#app main.user-content .site__dash .list_cnt {
+  grid-column: 1 / 10;
+  display: grid;
+  grid-template-columns: repeat(12, 8.33%);
+}
+
+#app main.user-content .site__dash .list_cnt .back {
+  grid-column: 1 / 4;
+  text-transform: uppercase;
+  padding-left: calc(9% + 10px);
+}
+
+#app main.user-content .site__dash .list_cnt .back a {
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  color: inherit;
+  -webkit-transition: background-color .3s ease;
+  transition: background-color .3s ease;
+  position: relative;
+}
+
+#app main.user-content .site__dash .list_cnt .back a:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(119, 136, 153, 0.66);
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+}
+
+#app main.user-content .site__dash .list_cnt .back a strong {
+  color: #00c4bb;
+}
+
+#app main.user-content .site__dash .list_cnt .back a span {
+  position: relative;
+  display: inline-block;
+}
+
+#app main.user-content .site__dash .list_cnt .back a span:before,
+#app main.user-content .site__dash .list_cnt .back a span:after {
+  content: "";
+  position: absolute;
+  left: -15px;
+  bottom: -14px;
+  width: 24px;
+  height: 2px;
+  opacity: 0;
+  background-color: rgba(119, 136, 153, 0.66);
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+  -webkit-transition: opacity .3s ease-out;
+  transition: opacity .3s ease-out;
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+}
+
+#app main.user-content .site__dash .list_cnt .back a span:after {
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  bottom: -6px;
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
+}
+
+#app main.user-content .site__dash .list_cnt .back a:hover {
+  background: rgba(119, 136, 153, 0.15);
+}
+
+#app main.user-content .site__dash .list_cnt .back a:hover:before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+}
+
+#app main.user-content .site__dash .list_cnt .back a:hover span:before {
+  opacity: 1;
+}
+
+#app main.user-content .site__dash .list_cnt .back a:hover span:after {
+  opacity: 1;
+}
+
+#app main.user-content .site__dash .list_cnt .loading {
+  grid-column: 3 / 11;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin-top: 5em;
+  letter-spacing: 6px;
+  font-weight: 600;
+}
+
+#app main.user-content .site__dash .list_cnt .loading em {
+  font-size: 1rem;
+  display: block;
+  font-weight: 300;
+  font-style: italic;
+  margin-top: -8px;
+  letter-spacing: 0;
+}
+
+#app main.user-content .site__dash .list_cnt .loading i {
+  opacity: 1;
+  font-style: normal;
+  -webkit-transition: opacity .2s ease;
+  transition: opacity .2s ease;
+  -webkit-animation: loading 1s ease infinite;
+          animation: loading 1s ease infinite;
+  margin-left: 5px;
+}
+
+#app main.user-content .site__dash .list_cnt .loading i:nth-of-type(2) {
+  -webkit-animation-delay: .25s;
+          animation-delay: .25s;
+}
+
+#app main.user-content .site__dash .list_cnt .loading i:nth-of-type(3) {
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
+}
+
+@-webkit-keyframes loading {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes loading {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+#app main.user-content .site__dash .list_cnt .list {
+  grid-column: 1 / 13;
+  display: grid;
+  grid: inherit;
+}
+
+#app main.user-content .site__dash .list_cnt .list__header {
+  grid-column: 2 / 12;
+}
+
+#app main.user-content .site__dash .list_cnt .list__header h2 {
+  text-transform: uppercase;
+  font-size: 2.6rem;
+  text-align: center;
+  position: relative;
+}
+
+#app main.user-content .site__dash .list_cnt .list__header h2 span {
+  position: relative;
+}
+
+#app main.user-content .site__dash .list_cnt .list__header h2 span:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: calc(100% + 26px);
+  left: -13px;
+  bottom: 7px;
+  height: 20px;
+  z-index: -1;
+  opacity: .33;
+  background: lightslategray;
+}
+
+#app main.user-content .site__dash .list_cnt .list__header h2 em {
+  font-size: 6.6rem;
+  font-family: 'Zefani Stencil';
+  opacity: .1;
+  letter-spacing: 32px;
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-style: normal;
+  font-weight: 300;
+  z-index: -2;
+}
+
+#app main.user-content .site__dash .list_cnt .list .img {
+  grid-column: 2 / 12;
+}
+
+#app main.user-content .site__dash .list_cnt .items {
+  grid-row-start: 4;
+  grid-column: 2 / 12;
+  display: inline-grid;
+  grid-template-columns: repeat(4, 25%);
+}
+
+#app main.user-content .site__dash .list_cnt .items .list__item:nth-child(odd) {
+  grid-column: 1 / 3;
+}
+
+#app main.user-content .site__dash .list_cnt .items .list__item:nth-child(even) {
+  grid-column: 3 / 5;
+}
+
+#app main.user-content .site__dash .list_cnt .items .list__item img {
+  display: block;
+  margin: 0 auto;
+  height: 300px;
+}
+
+#app main.user-content .site__dash .list_cnt .items .info {
+  text-align: center;
+}
+
+#app main.user-content .site__dash .list_cnt .items .info p.description span {
+  display: block;
+}
+
+#app main.user-content .site__dash .list_cnt .list_people {
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+}
+
+#app main.user-content .site__dash .list_cnt .list_people.created_by {
+  float: left;
+}
+
+#app main.user-content .site__dash .list_cnt .list_people.members .invite em {
+  font-style: normal;
+  font-weight: 700;
+  color: #00C5BC;
+  cursor: pointer;
+}
+
+#app main.user-content .site__dash .list_cnt .additem {
+  grid-column: 4 / 10;
+  grid-row: 3 / 3;
+  text-align: center;
+}
+
+#app main.user-content .site__dash .list_cnt .additem button.create {
+  position: relative;
+  width: 266px;
+  border: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-bottom: 2px solid lightslategray;
+  padding: 10px 15px;
+  font-size: .8rem;
+}
+
+#app main.user-content .site__dash .list_cnt .additem button.create:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(119, 136, 153, 0.2);
+  left: 0;
+  top: 0;
+  -webkit-transition: -webkit-transform .3s ease-in;
+  transition: -webkit-transform .3s ease-in;
+  transition: transform .3s ease-in;
+  transition: transform .3s ease-in, -webkit-transform .3s ease-in;
+  z-index: -1;
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+
+#app main.user-content .site__dash .list_cnt .additem button.create:hover:before {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+}
+
+#app main.user-content .site__dash .list_cnt .additem button.create.active {
+  background-color: rgba(0, 221, 211, 0.33);
+}
+
+#app main.user-content .site__dash .list_cnt .additem button.create.active i.fa-minus-square {
+  display: inline-block;
+}
+
+#app main.user-content .site__dash .list_cnt .additem button.create.active i.fa-plus-square {
+  display: none;
+}
+
+#app main.user-content .site__dash .list_cnt .additem button.create:focus {
+  outline: none;
+}
+
+#app main.user-content .site__dash .list_cnt .additem button.create i {
+  opacity: .66;
+  margin-top: 2px;
+  font-size: .96rem;
+  z-index: -1;
+  pointer-events: none;
+}
+
+#app main.user-content .site__dash .list_cnt .additem button.create i.fa-minus-square {
+  display: none;
+}
+
+#app main.user-content .site__dash .list_cnt .additem form {
+  text-align: left;
+  max-height: 350px;
+  height: 350px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: max-height .3s ease, opacity .3s ease .3s;
+  transition: max-height .3s ease, opacity .3s ease .3s;
+}
+
+#app main.user-content .site__dash .list_cnt .additem form.inactive {
+  -webkit-transition: max-height .3s ease .3s, opacity .3s ease, visibility .1s linear .5s;
+  transition: max-height .3s ease .3s, opacity .3s ease, visibility .1s linear .5s;
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+}
+
+#app main.user-content .site__dash .list_cnt .additem form .field {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 35px;
+}
+
+#app main.user-content .site__dash .list_cnt .additem form .field.submit {
+  margin-top: 0;
+}
+
+#app main.user-content .site__dash .list_cnt .additem form .field button.create {
+  width: 100%;
+  background-color: rgba(119, 136, 153, 0.22);
+  border: none;
+  font-weight: 600;
+}
+
+#app main.user-content .site__dash .list_cnt .additem form .field button.create:before {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  opacity: 0;
+}
+
+#app main.user-content .site__dash .list_cnt .additem form .field .label {
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+#app main.user-content .site__dash .list_cnt .additem form .field .control .input {
+  width: 100%;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  border: 2px solid lightslategray;
+  padding: 8px 18px;
+  -webkit-transition: border .3s ease;
+  transition: border .3s ease;
+  font-size: .9rem;
+  font-family: 'Poppins';
+  background-color: transparent;
+  position: relative;
+}
+
+#app main.user-content .site__dash .list_cnt .additem form .field .control .input ~ span.errormsg {
+  color: #f96a59;
+  font-size: .75rem;
+  font-family: 'Poppins';
+  font-weight: 300;
+}
+
+#app main.user-content .site__dash .list_cnt .additem form .field.submit button {
+  width: 133px;
+}
+
+#app footer {
+  padding-top: 35px;
+  border-top: 1px solid lightgray;
+  grid-area: footer;
+}
+
+#app footer .cnt {
+  text-align: center;
+  padding-bottom: 3em;
+}
+
